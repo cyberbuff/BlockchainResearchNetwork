@@ -10,7 +10,9 @@ docker stop iroha
 docker stop some-postgres
 
 echo -e "${RED}removing rest${NC}"
-docker system prune -a -f 
+docker rm iroha
+docker rm some-postgres
+
 docker volume rm blockstore
 docker network prune -f 
 

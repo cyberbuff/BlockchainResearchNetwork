@@ -79,6 +79,12 @@
                           }
                        },
                        {
+                          "createDomain":{
+                             "domainId":"journal",
+                             "defaultRole":"user"
+                          }
+                       },
+                       {
                           "createAsset":{
                              "assetName":"coin",
                              "domainId":"test",
