@@ -5,6 +5,8 @@
   Blockchain Research Network 
 </h1>
 <h2 class="subtitle">
-  {{current_user.name}}
+  {% if iroha%}
+  {{iroha.user.account_id}}
+  {%endif%}
 </h2>
 {% endblock %}

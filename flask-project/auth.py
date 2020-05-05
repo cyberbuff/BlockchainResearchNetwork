@@ -52,7 +52,7 @@ def signup_post():
     db.session.add(new_user)
     db.session.commit()
     print(new_user.private_key)
-    return redirect(url_for('auth.login'))
+    return redirect(url_for('main.index'))
 
 @auth.route('/logout')
 @login_required

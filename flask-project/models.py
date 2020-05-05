@@ -9,5 +9,3 @@ class User(UserMixin, db.Model):
     password = db.Column(db.String(100))
     name = db.Column(db.String(1000))
     private_key = db.Column(db.String(1000),unique=True)
-    account_id = f'{name}@test'
-    iroha = IrohaSDK(IrohaUser(account_id,private_key))
