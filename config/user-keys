@@ -1,0 +1,18 @@
+{
+    'author' : {
+        'private': '42c355ed50591fa2548eb19c457c1eb9cacc55e666ea9a393645a9b96b263eef',
+        'public' : 'dca071976adc542037ddf63b32fa1540bd059f8b8163611754d797a7cb3fc9b4'
+        },
+    'reviewer' : {
+        'private': '118d762fc56191cf2d96c7e73562ad6abd982cd665a000a6d64f4f0f1c742e71',
+        'public' : '88fe75eeed6761825f38d3c7be03b3a9dcece4aa1800fef27d142bd3fbc0ca72'
+        },
+    'public' : {
+        'private': '014e244a379d292649eac49d65c978f89f44c40ad7c07a2967af8b407dca847e',
+        'public' : '0291167da5b51816ecfc0fe9c9b70992b975de2335fb0d2f38dc562ae2adef7d'
+        },
+    'private' : {
+        'private': 'a577bf3d1293d9312e9307bff2542e5bc2100dd2bb93f71e0593edb9b035d4ee',
+        'public' : 'e51107cd1a7f2252905a5424c0ebf8927baf5d3cd0aee84a3369f1f7b6947446'
+        }
+}
