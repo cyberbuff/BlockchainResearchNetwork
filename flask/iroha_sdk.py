@@ -1,5 +1,6 @@
 from iroha import Iroha, IrohaGrpc
 from iroha import IrohaCrypto
+from iroha import primitive_pb2
 import os
 import sys
 import time
@@ -48,9 +49,11 @@ def create_asset(journal_id):
 
 
 def assign_asset(journal_id):
-    create_asset(journal_id)
+    # create_asset(journal_id)
     assetid = journal_id+'#'+'journal'
     commands = [
+        iroha.command('CreateAsset', asset_name=journal_id,
+                      domain_id='journal', precision=1),
         iroha.command('AddAssetQuantity',
                       asset_id=assetid, amount='1'),
         iroha.command('TransferAsset', src_account_id=ADMIN_ACCOUNT_ID, dest_account_id='author@test',
@@ -85,11 +88,8 @@ def get_account_details(name):
     IrohaCrypto.sign_query(query, ADMIN_PRIVATE_KEY)
 
     response = net.send_query(query)
-    data = response.account_assets_response.account_assets
-    res = []
-    for asset in data:
-        res.append(asset)
-    return res
+    data = response.account_detail_response.detail
+    return data
 
 
 def transfer_from_src_to_dest(src,dest,ass):
@@ -128,8 +128,26 @@ def send_transaction_and_print_status(transaction):
         to_send_back.append(status)
     return to_send_back
 
+def perform_commands(commands):
+    tx = iroha.transaction(commands)
+    IrohaCrypto.sign_transaction(tx, ADMIN_PRIVATE_KEY)
+    result = send_transaction_and_print_status(tx)
+    return result
+
+
+def perform_query(query):
+    return None
+    
+
+def set_account_details(acc_id,data):
+    commands = [iroha.command('SetAccountDetail',account_id=acc_id,key=k,value=v) for k,v in data.items()]
+    return perform_commands(commands)
+
+
 if __name__ == "__main__":
     # create_account("author")
-    print(assign_asset('journal2'))
-    print(get_account_details("author"))
+    # print(assign_asset('journal4'))
     print(get_account_assets("author"))
+    print(get_account_assets("admin"))
+    print(set_account_details('admin@test',{'key':'value'}))
+    print(get_account_details('test'))
