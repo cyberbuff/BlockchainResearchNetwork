@@ -64,7 +64,18 @@
                        },
                        {
                           "createRole":{
-                             "roleName":"money_creator",
+                             "roleName":"author",
+                             "permissions":[
+                                "can_add_asset_qty",
+                                "can_create_asset",
+                                "can_receive",
+                                "can_transfer"
+                             ]
+                          }
+                       },
+                       {
+                          "createRole":{
+                             "roleName":"reviewer",
                              "permissions":[
                                 "can_add_asset_qty",
                                 "can_create_asset",
@@ -101,9 +112,30 @@
                        },
                        {
                           "createAccount":{
-                             "accountName":"test",
+                             "accountName":"author",
                              "domainId":"test",
-                             "publicKey":"716fe505f69f18511a1b083915aa9ff73ef36e6688199f3959750db38b8f4bfc"
+                             "publicKey":"dca071976adc542037ddf63b32fa1540bd059f8b8163611754d797a7cb3fc9b4"
+                          }
+                       },
+                       {
+                          "createAccount":{
+                             "accountName":"reviewer",
+                             "domainId":"test",
+                             "publicKey":"88fe75eeed6761825f38d3c7be03b3a9dcece4aa1800fef27d142bd3fbc0ca72"
+                          }
+                       },
+                       {
+                          "createAccount":{
+                             "accountName":"public",
+                             "domainId":"test",
+                             "publicKey":"0291167da5b51816ecfc0fe9c9b70992b975de2335fb0d2f38dc562ae2adef7d"
+                          }
+                       },
+                       {
+                          "createAccount":{
+                             "accountName":"private",
+                             "domainId":"test",
+                             "publicKey":"e51107cd1a7f2252905a5424c0ebf8927baf5d3cd0aee84a3369f1f7b6947446"
                           }
                        },
                        {
@@ -114,8 +146,14 @@
                        },
                        {
                           "appendRole":{
-                             "accountId":"admin@test",
-                             "roleName":"money_creator"
+                             "accountId":"author@test",
+                             "roleName":"author"
+                          }
+                       },
+                       {
+                          "appendRole":{
+                             "accountId":"reviewer@test",
+                             "roleName":"reviewer"
                           }
                        }
                     ],
