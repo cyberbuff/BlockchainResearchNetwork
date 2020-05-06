@@ -22,13 +22,7 @@ Functions:
 
 ***Admin***: Able to add new users and view rejected journals. &nbsp;
 
-<<<<<<< HEAD
-Functions:
-Author: Able to upload journals
-Reviewer: Reviews the uploaded journals.
-User: Able to read the journals posted. 
-Admin: Able to add new users and view rejected journals
-=======
+Pre-Requisites:
 
-
->>>>>>> 5e56935d183566cd1e226621ddc8fa97d0aafcb5
+Install IPFS from https://ipfs.io
+Install requirements in flask-project/requirements.txt
