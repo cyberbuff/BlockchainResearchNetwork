@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Flask Auth Example</title>
+    <title>Blockchain Research Network</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
 </head>
 
@@ -29,13 +29,10 @@
                                 Login
                             </a>
                             {%endif%}
-                            
                             {% if current_user.is_authenticated %}
-                                {% if iroha and iroha.is_admin%}
-                                    <a href="{{ url_for('auth.signup') }}" class="navbar-item">
-                                        {{ iroha.is_admin }} 
-                                    </a>
-                                {% endif %}
+                                <a href="{{ url_for('main.browse') }}" class="navbar-item">
+                                    Browse
+                                </a>
                                 <a href="{{ url_for('auth.logout') }}" class="navbar-item">
                                     Logout
                                 </a>

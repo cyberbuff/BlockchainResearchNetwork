@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <h2> Review Journals</h2>
+  <br>
+  <ul>
+  {% for link in items %}
+  <li>
+  <p>
+    <a href="{{ link.url }}">{{ link.name }}</a> 
+  #{{ link.keywords }} 
+  <a href="{{ link.url }}">Approve</a> 
+  <a href="{{ link.url }}">Reject</a> 
+  </p>
+  </li>
+  {% endfor %}
+  </ul>
+  <p>Click <a href="/">here</a> to go home.</p>
+</div>
+{% endblock %}

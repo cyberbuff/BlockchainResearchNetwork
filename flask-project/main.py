@@ -20,6 +20,7 @@ def initialize(func):
     return init
 
 @main.route('/')
+@initialize
 def index():
     return render_template('index.html')
 
@@ -27,8 +28,23 @@ def index():
 @login_required
 @initialize
 def profile():
-    return render_template('profile.html', name=current_user.name,is_admin = iroha.is_admin(),is_author=iroha.is_author())
+    return render_template('profile.html', name=current_user.name,is_admin = iroha.is_admin(),is_author=iroha.is_author(),is_reviewer=iroha.is_reviewer())
 
 @main.route('/browse')
+@initialize
 def browse():
-    return 'Browse'
+    items = [{'name': 'Home', 'url': 'static/files/mozilla.pdf','keywords':'crypto'},
+            {'name': 'About', 'url': 'https://example.com/2','keywords':'blockchain'},
+            {'name': 'Pics', 'url': 'https://example.com/3','keywords':'hyperledger'}]
+    return render_template('browse.html', items=items)
+
+@main.route('/author')
+def author():
+    return render_template('author.html')
+
+@main.route('/reviewer')
+def reviewer():
+    items = [{'name': 'Home', 'url': 'static/files/mozilla.pdf','keywords':'crypto'},
+            {'name': 'About', 'url': 'https://example.com/2','keywords':'blockchain'},
+            {'name': 'Pics', 'url': 'https://example.com/3','keywords':'hyperledger'}]
+    return render_template('reviewer.html',items=items)

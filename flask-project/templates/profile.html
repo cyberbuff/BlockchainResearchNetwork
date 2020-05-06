@@ -4,15 +4,4 @@
 <h1 class="title">
     Welcome, {{ name }}!
 </h1>
-
-<p>
-{% if is_admin %}
-<button class="button is-block is-info is-large is-fullwidth">Create</button>
-{% endif %}
-
-
-{% if is_author %}
-<button class="button is-block is-info is-large is-fullwidth">Submit</button>
-{% endif %}
-</p>
 {% endblock %}
