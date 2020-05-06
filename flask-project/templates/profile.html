@@ -4,4 +4,20 @@
 <h1 class="title">
     Welcome, {{ name }}!
 </h1>
+
+{% if iroha.is_admin() %}
+<ul>
+<li class='no-bullets'><a href='/signup'>Create New User</a></li>
+<li class='no-bullets'><a href='/rejected'>View Rejected Journals</a></li>
+{% endif %}
+
+{% if iroha.is_author() %}
+<a href='/author'>Submit Journal for Review</a>
+{% endif %}
+
+{% if iroha.is_reviewer() %}
+<a href='/reviewer'>Review Journals</a>
+{% endif %}
+
+
 {% endblock %}

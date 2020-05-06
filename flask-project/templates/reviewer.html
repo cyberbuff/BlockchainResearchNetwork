@@ -8,10 +8,10 @@
   {% for link in items %}
   <li>
   <p>
-    <a href="{{ link.url }}">{{ link.name }}</a> 
+    <a href="{{ link.url }}">{{ link.title }}</a> 
   #{{ link.keywords }} 
-  <a href="{{ link.url }}">Approve</a> 
-  <a href="{{ link.url }}">Reject</a> 
+  <a href="/review/{{link.id}}/approve">Approve</a>
+  <a href="/review/{{link.id}}/reject">Reject</a> 
   </p>
   </li>
   {% endfor %}

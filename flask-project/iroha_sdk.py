@@ -19,6 +19,7 @@ class User:
     def __init__(self,account_id,private_key):
         self.account_id = account_id
         self.private_key = private_key
+        self.domain = account_id.split('@')[1]
 
 
 class IrohaSDK:
@@ -78,10 +79,10 @@ class IrohaSDK:
     
     def create_asset(self,journal_id):
         if self.is_author:
-            assetid = f'{journal_id}#journal'
+            assetid = f'{journal_id}#test'
             commands = [
                 self.iroha.command('CreateAsset', asset_name=journal_id,
-                            domain_id='journal', precision=1),
+                            domain_id='test', precision=1),
                 self.iroha.command('AddAssetQuantity',
                             asset_id=assetid, amount='1')
             ]
@@ -93,8 +94,8 @@ class IrohaSDK:
         """
         List all the assets of an account
         """
-        print(name)
         accid = self.get_account_id(name)
+        print(accid)
         query = self.iroha.query('GetAccountAssets', account_id=accid)
         IrohaCrypto.sign_query(query, self.user.private_key)
 
@@ -122,7 +123,7 @@ class IrohaSDK:
 
     def transfer_from_src_to_dest(self,dest,journal_id):
         destaccid = self.get_account_id(dest)
-        assetid = f'{journal_id}#journal'
+        assetid = f'{journal_id}#test'
         tx = self.iroha.transaction([
             self.iroha.command('TransferAsset', src_account_id=self.user.account_id, dest_account_id=destaccid,
                         asset_id=assetid, description='Transferred', amount='1')
@@ -195,3 +196,13 @@ class IrohaSDK:
 
     def is_logged_in(self):
         return self.is_user()
+
+
+
+def get_assets(name):
+    test_iroha = IrohaSDK(User("admin@test","f101537e319568c765b2cc89698325604991dca57b9716b58016b253506cab70"))
+    res = []
+    for i in test_iroha.get_account_assets(name):
+        if i.balance == "1":
+            res.append(i.asset_id.replace('#test','').replace('j',''))
+    return res

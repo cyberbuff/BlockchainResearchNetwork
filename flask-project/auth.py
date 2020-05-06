@@ -3,6 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from models import User,Journal
 from app import db
 from flask_login import login_user, logout_user, login_required
+from main import set_iroha_none
 
 auth = Blueprint('auth', __name__)
 
@@ -58,4 +59,5 @@ def signup_post():
 @login_required
 def logout():
     logout_user()
+    set_iroha_none()
     return redirect(url_for('main.index'))
