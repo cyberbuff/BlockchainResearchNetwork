@@ -1,9 +1,7 @@
 # BlockchainResearchNetwork
-
 PoC for the Blockchain Research Network
 
-
-User Credentials: 
+### User Credentials: ###
 
 Role          | Username      | Password 
 ------------- | ------------- | -------------
@@ -12,7 +10,7 @@ Reviewer  | reviewer@brn.com  | reviewer
 User  | public@brn.com  | public
 Admin | admin@brn.com | admin
 
-Functions:
+### Functions: ###
 
 ***Author***: Able to upload journals &nbsp;
 
@@ -22,7 +20,7 @@ Functions:
 
 ***Admin***: Able to add new users and view rejected journals. &nbsp;
 
-Pre-Requisites:
+### Pre-Requisites: ### 
 
 Install IPFS from https://ipfs.io
 
