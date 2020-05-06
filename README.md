@@ -13,10 +13,14 @@ User  | public@brn.com  | public
 Admin | admin@brn.com | admin
 
 Functions:
-Author: Able to upload journals &nbsp;
-Reviewer: Reviews the uploaded journals. &nbsp;
-User: Able to read the journals posted. &nbsp;
-Admin: Able to add new users and view rejected journals. &nbsp;
+
+***Author***: Able to upload journals &nbsp;
+
+***Reviewer***: Reviews the uploaded journals. &nbsp;
+
+***User***: Able to read the journals posted. &nbsp;
+
+***Admin***: Able to add new users and view rejected journals. &nbsp;
 
 
 
