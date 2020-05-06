@@ -1,0 +1,5 @@
+Flask_SQLAlchemy==2.4.1
+iroha==0.0.5.5
+Werkzeug==0.16.1
+Flask==1.1.1
+Flask_Login==0.5.0
