@@ -20,3 +20,6 @@ docker run --name iroha -d -p 50051:50051 -v $(pwd)/config:/opt/iroha_data -v bl
 
 echo -e "${RED}Testing${NC}"
 docker ps
+
+echo -e "${RED}Starting IPFS daemon${NC}"
+ipfs daemon

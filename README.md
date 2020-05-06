@@ -26,5 +26,3 @@ Author: Able to upload journals
 Reviewer: Reviews the uploaded journals.
 User: Able to read the journals posted. 
 Admin: Able to add new users and view rejected journals
-
-
