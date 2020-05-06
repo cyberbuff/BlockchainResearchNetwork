@@ -25,4 +25,5 @@ Functions:
 Pre-Requisites:
 
 Install IPFS from https://ipfs.io
+
 Install requirements in flask-project/requirements.txt
